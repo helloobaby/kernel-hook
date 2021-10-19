@@ -1,5 +1,5 @@
 #include "hk.h"
-#include"hde/hde.h"
+#include"../hde/hde.h"
 
 hde64s gIns;
 
@@ -220,6 +220,7 @@ NTSTATUS HkDetourFunction(
 	}
 	else
 	{
+		if(OriginalTrampoline)
 		*OriginalTrampoline = Trampoline + INTERLOCKED_EXCHANGE_SIZE;
 	}
 
